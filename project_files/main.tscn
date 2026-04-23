@@ -11,11 +11,20 @@ top_radius = 0.2
 bottom_radius = 0.2
 height = 0.1
 
-[sub_resource type="PlaneMesh" id="PlaneMesh_5vw27"]
+[sub_resource type="PlaneMesh" id="PlaneMesh_lquwl"]
 size = Vector2(20, 20)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_kek77"]
-size = Vector3(20, 0.1, 20)
+[sub_resource type="BoxShape3D" id="BoxShape3D_7mycd"]
+size = Vector3(20, 1, 20)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_5vw27"]
+top_radius = 0.0
+bottom_radius = 1.145
+height = 3.29
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_kek77"]
+height = 0.001
+radius = 1.712
 
 [node name="Node3D" type="Node3D" unique_id=861789591]
 script = ExtResource("1_2h1pa")
@@ -31,6 +40,7 @@ tracker = &"left_hand"
 [node name="LeftHandRoot" type="Node3D" parent="XROrigin3D/LeftController" unique_id=1310346370]
 
 [node name="hand_l" parent="XROrigin3D/LeftController/LeftHandRoot" unique_id=1185890127 instance=ExtResource("2_1bvp3")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=2029641092]
 tracker = &"right_hand"
@@ -39,6 +49,7 @@ script = ExtResource("3_lquwl")
 [node name="RightHandRoot" type="Node3D" parent="XROrigin3D/RightController" unique_id=185832925]
 
 [node name="hand_r" parent="XROrigin3D/RightController/RightHandRoot" unique_id=602055184 instance=ExtResource("4_7mycd")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="TeleportRay" type="RayCast3D" parent="XROrigin3D/RightController" unique_id=1606368127]
 target_position = Vector3(0, -1, -10)
@@ -54,13 +65,28 @@ offset_right = 8.0
 offset_bottom = 8.0
 text = "Enter VR"
 
-[node name="Level" type="MeshInstance3D" parent="." unique_id=830156394]
-mesh = SubResource("PlaneMesh_5vw27")
+[node name="NodeLevel" type="Node3D" parent="." unique_id=1491510390]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Level" unique_id=127380785]
+[node name="Level" type="MeshInstance3D" parent="NodeLevel" unique_id=44387286]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.072172746, 0, 0)
+mesh = SubResource("PlaneMesh_lquwl")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/StaticBody3D" unique_id=824776140]
-shape = SubResource("BoxShape3D_kek77")
+[node name="StaticBody3D" type="StaticBody3D" parent="NodeLevel/Level" unique_id=125943844]
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=618853442]
-shadow_enabled = true
+[node name="CollisionShape3D" type="CollisionShape3D" parent="NodeLevel/Level/StaticBody3D" unique_id=668640894]
+shape = SubResource("BoxShape3D_7mycd")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=368490293]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.22569048, 1.7143458, -4.292859)
+mesh = SubResource("CylinderMesh_5vw27")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1190599445]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=1052269989]
+shape = SubResource("CylinderShape3D_kek77")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1758199806]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.32536513, 0.8248733, -0.33574295)
+light_color = Color(1, 0.62352943, 0.22352941, 1)
+light_indirect_energy = 8.166
+directional_shadow_split_1 = 0.085
