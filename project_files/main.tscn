@@ -1,31 +1,51 @@
 [gd_scene format=3 uid="uid://ch5yba3tphlom"]
 
 [ext_resource type="Script" uid="uid://ct7vqf2lyd70f" path="res://node_3d.gd" id="1_2h1pa"]
+[ext_resource type="PackedScene" uid="uid://cdg86te1k0kjf" path="res://assets/models/hand_l.gltf" id="2_1bvp3"]
+[ext_resource type="Script" uid="uid://d3nohurygrnpy" path="res://xr_origin_3d.gd" id="2_lquwl"]
+[ext_resource type="Script" uid="uid://b3h8cmnrih661" path="res://right_controller.gd" id="3_lquwl"]
+[ext_resource type="PackedScene" uid="uid://ircv4avuj0lo" path="res://assets/models/hand_r.gltf" id="4_7mycd"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_a336g"]
-size = Vector3(0.1, 0.1, 0.1)
+[sub_resource type="CylinderMesh" id="CylinderMesh_272bh"]
+top_radius = 0.2
+bottom_radius = 0.2
+height = 0.1
 
-[sub_resource type="BoxMesh" id="BoxMesh_lxlcg"]
-size = Vector3(0.1, 0.1, 0.1)
+[sub_resource type="PlaneMesh" id="PlaneMesh_5vw27"]
+size = Vector2(20, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kek77"]
+size = Vector3(20, 0.1, 20)
 
 [node name="Node3D" type="Node3D" unique_id=861789591]
 script = ExtResource("1_2h1pa")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=114804357]
+script = ExtResource("2_lquwl")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=87452628]
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=483040678]
 tracker = &"left_hand"
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/LeftController" unique_id=1897105740]
-mesh = SubResource("BoxMesh_a336g")
+[node name="LeftHandRoot" type="Node3D" parent="XROrigin3D/LeftController" unique_id=1310346370]
+
+[node name="hand_l" parent="XROrigin3D/LeftController/LeftHandRoot" unique_id=1185890127 instance=ExtResource("2_1bvp3")]
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=2029641092]
 tracker = &"right_hand"
+script = ExtResource("3_lquwl")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1154474000]
-mesh = SubResource("BoxMesh_lxlcg")
+[node name="RightHandRoot" type="Node3D" parent="XROrigin3D/RightController" unique_id=185832925]
+
+[node name="hand_r" parent="XROrigin3D/RightController/RightHandRoot" unique_id=602055184 instance=ExtResource("4_7mycd")]
+
+[node name="TeleportRay" type="RayCast3D" parent="XROrigin3D/RightController" unique_id=1606368127]
+target_position = Vector3(0, -1, -10)
+
+[node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=535660354]
+visible = false
+mesh = SubResource("CylinderMesh_272bh")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1843379335]
 
@@ -33,3 +53,13 @@ mesh = SubResource("BoxMesh_lxlcg")
 offset_right = 8.0
 offset_bottom = 8.0
 text = "Enter VR"
+
+[node name="Level" type="MeshInstance3D" parent="." unique_id=830156394]
+mesh = SubResource("PlaneMesh_5vw27")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Level" unique_id=127380785]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Level/StaticBody3D" unique_id=824776140]
+shape = SubResource("BoxShape3D_kek77")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=618853442]
