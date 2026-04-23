@@ -63,3 +63,4 @@ mesh = SubResource("PlaneMesh_5vw27")
 shape = SubResource("BoxShape3D_kek77")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=618853442]
+shadow_enabled = true
