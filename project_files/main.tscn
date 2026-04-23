@@ -40,7 +40,6 @@ tracker = &"left_hand"
 [node name="LeftHandRoot" type="Node3D" parent="XROrigin3D/LeftController" unique_id=1310346370]
 
 [node name="hand_l" parent="XROrigin3D/LeftController/LeftHandRoot" unique_id=1185890127 instance=ExtResource("2_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=2029641092]
 tracker = &"right_hand"
@@ -49,7 +48,6 @@ script = ExtResource("3_lquwl")
 [node name="RightHandRoot" type="Node3D" parent="XROrigin3D/RightController" unique_id=185832925]
 
 [node name="hand_r" parent="XROrigin3D/RightController/RightHandRoot" unique_id=602055184 instance=ExtResource("4_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 
 [node name="TeleportRay" type="RayCast3D" parent="XROrigin3D/RightController" unique_id=1606368127]
 target_position = Vector3(0, -1, -10)
