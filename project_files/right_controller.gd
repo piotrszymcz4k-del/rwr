@@ -60,4 +60,4 @@ func teleport_now() -> void:
 	cam_offset.y = 0.0 
 	
 	# Ustalamy nową pozycję: celujemy głową w target, więc środek pokoju musi być przesunięty o offset
-	xr_origin.global_position = Vector3(target.x - cam_offset.x, target.y, target.z - cam_offset.z)
+	xr_origin.global_position = Vector3(target.x - cam_offset.x, target.y + 0.02, target.z - cam_offset.z)

@@ -52,6 +52,7 @@ script = ExtResource("3_lquwl")
 
 [node name="TeleportRay" type="RayCast3D" parent="XROrigin3D/RightController" unique_id=1606368127]
 target_position = Vector3(0, -1, -10)
+hit_from_inside = true
 
 [node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1663397397]
 mesh = SubResource("CylinderMesh_lquwl")
