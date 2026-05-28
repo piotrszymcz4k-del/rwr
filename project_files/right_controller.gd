@@ -6,7 +6,7 @@ var xr_origin: XROrigin3D
 var xr_camera: XRCamera3D
 
 # Zmienne do obrotu skokowego (Snap Turn)
-var turn_step: float = deg_to_rad(45.0) # Obrót o 45 stopni
+var turn_step: float = deg_to_rad(15.0) # Obrót o 15 stopni
 var can_snap_turn: bool = true # Blokada ciągłego obrotu
 
 func _ready() -> void:

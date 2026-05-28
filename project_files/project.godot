@@ -22,6 +22,7 @@ config/icon="res://icon.svg"
 [rendering]
 
 rendering_device/driver.windows="d3d12"
+environment/defaults/default_clear_color=Color(0.4745098, 0.7607843, 0.8666667, 1)
 
 [xr]
 

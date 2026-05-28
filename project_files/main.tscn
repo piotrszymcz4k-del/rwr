@@ -11,10 +11,10 @@
 [ext_resource type="PackedScene" uid="uid://cxfg12deqteum" path="res://assets/models/tree_palmDetailedTall.glb" id="9_efxa6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
-albedo_color = Color(0.7876728, 0.0005053729, 0.79218704, 1)
+albedo_color = Color(0.63106656, 0, 2.4383342, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lquwl"]
-top_radius = 0.2
+top_radius = 0.3
 bottom_radius = 0.2
 height = 0.05
 
@@ -72,7 +72,7 @@ collision_mask = 2
 hit_from_inside = true
 
 [node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1663397397]
-transform = Transform3D(1, 0, 0, 0, 0.9920248, -0.12604316, 0, 0.12604316, 0.9920248, -0.05147022, -0.9208057, -2.7340758)
+transform = Transform3D(1, 0, 0, 0, 0.9920248, -0.12604316, 0, 0.12604316, 0.9920248, -0.006401006, -1.9829412, -4.9681234)
 material_override = SubResource("StandardMaterial3D_272bh")
 mesh = SubResource("CylinderMesh_lquwl")
 
@@ -136,7 +136,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 shape = SubResource("ConcavePolygonShape3D_dg77c")
 
 [node name="tree_palmDetailedShort2" parent="." unique_id=1054559469 instance=ExtResource("8_4c57u")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 5.807104, -1.4101384, 4.5420995)
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 3.6078176, -1.6052022, 6.635293)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree_palmDetailedShort2" unique_id=1794835282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
