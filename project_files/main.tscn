@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://b6khvuvoylqe5" path="res://assets/models/tree_palmDetailedShort.glb" id="8_4c57u"]
 [ext_resource type="PackedScene" uid="uid://cxfg12deqteum" path="res://assets/models/tree_palmDetailedTall.glb" id="9_efxa6"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c57u"]
+
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
 albedo_color = Color(0, 3.3848207, 3.3848207, 1)
 
@@ -18,6 +20,8 @@ albedo_color = Color(0, 3.3848207, 3.3848207, 1)
 top_radius = 0.3
 bottom_radius = 0.2
 height = 0.05
+
+[sub_resource type="SystemFont" id="SystemFont_efxa6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efxa6"]
 albedo_texture = ExtResource("6_4c57u")
@@ -51,7 +55,6 @@ script = ExtResource("1_2h1pa")
 script = ExtResource("2_lquwl")
 
 [node name="XRCamera3D" type="XRCamera3D" parent="XROrigin3D" unique_id=87452628]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.19924797, -0.06862351)
 
 [node name="LeftController" type="XRController3D" parent="XROrigin3D" unique_id=483040678]
 tracker = &"left_hand"
@@ -59,7 +62,6 @@ tracker = &"left_hand"
 [node name="LeftHandRoot" type="Node3D" parent="XROrigin3D/LeftController" unique_id=1310346370]
 
 [node name="hand_l" parent="XROrigin3D/LeftController/LeftHandRoot" unique_id=1185890127 instance=ExtResource("2_1bvp3")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.10933669, -0.20659575, -0.087589905)
 
 [node name="RightController" type="XRController3D" parent="XROrigin3D" unique_id=2029641092]
 tracker = &"right_hand"
@@ -68,7 +70,9 @@ script = ExtResource("3_lquwl")
 [node name="RightHandRoot" type="Node3D" parent="XROrigin3D/RightController" unique_id=185832925]
 
 [node name="hand_r" parent="XROrigin3D/RightController/RightHandRoot" unique_id=602055184 instance=ExtResource("4_7mycd")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.08748367, -0.20948899, -0.10524568)
+
+[node name="mesh_Hand_R" parent="XROrigin3D/RightController/RightHandRoot/hand_r/Armature/Skeleton3D" parent_id_path=PackedInt32Array(602055184, 715652662) index="0" unique_id=2068014237]
+surface_material_override/0 = SubResource("StandardMaterial3D_4c57u")
 
 [node name="TeleportRay" type="RayCast3D" parent="XROrigin3D/RightController" unique_id=1606368127]
 target_position = Vector3(0, -4, -10)
@@ -83,8 +87,22 @@ mesh = SubResource("CylinderMesh_lquwl")
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1843379335]
 
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=1954376599]
-offset_right = 8.0
-offset_bottom = 8.0
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -37.0
+offset_top = -15.5
+offset_right = 37.0
+offset_bottom = 15.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = SubResource("SystemFont_efxa6")
+theme_override_font_sizes/font_size = 70
 text = "Enter VR"
 
 [node name="NodeLevel" type="Node3D" parent="." unique_id=1491510390]
@@ -164,6 +182,8 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 2.588975, -1.9077563, 1.06118
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 shape = SubResource("ConcavePolygonShape3D_vivmo")
 
+[editable path="XROrigin3D/LeftController/LeftHandRoot/hand_l"]
+[editable path="XROrigin3D/RightController/RightHandRoot/hand_r"]
 [editable path="tree_palm2"]
 [editable path="tree_palm5"]
 [editable path="tree_palm3"]

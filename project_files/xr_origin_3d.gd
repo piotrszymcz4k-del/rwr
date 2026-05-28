@@ -1,6 +1,6 @@
 extends XROrigin3D
 
-@export var move_speed: float = 2.5
+@export var move_speed: float = 3.2
 @export var deadzone: float = 0.15
 @onready var xr_camera: XRCamera3D = $XRCamera3D
 @onready var left_ctrl: XRController3D = $LeftController
@@ -20,7 +20,7 @@ func _physics_process(delta: float) -> void:
 	if v.length() < deadzone:
 		v = Vector2.ZERO
 
-	dir += fwd * (-v.y) + right * (v.x)
+	dir += fwd * v.y + right * v.x
 
 	if dir.length() > 0.0:
 		global_translate(dir.normalized() * move_speed * delta)
