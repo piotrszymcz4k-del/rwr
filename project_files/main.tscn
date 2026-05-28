@@ -12,6 +12,9 @@ top_radius = 0.2
 bottom_radius = 0.2
 height = 0.05
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
+albedo_color = Color(1, 1, 0, 1)
+
 [sub_resource type="PlaneMesh" id="PlaneMesh_lquwl"]
 size = Vector2(20, 20)
 center_offset = Vector3(0, -2, 0)
@@ -47,6 +50,7 @@ script = ExtResource("3_lquwl")
 
 [node name="TeleportRay" type="RayCast3D" parent="XROrigin3D/RightController" unique_id=1606368127]
 target_position = Vector3(0, -1, -10)
+collision_mask = 2
 hit_from_inside = true
 
 [node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1663397397]
@@ -63,9 +67,11 @@ text = "Enter VR"
 
 [node name="Level" type="MeshInstance3D" parent="NodeLevel" unique_id=44387286]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.072172746, 0, 0)
+material_override = SubResource("StandardMaterial3D_7mycd")
 mesh = SubResource("PlaneMesh_lquwl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NodeLevel/Level" unique_id=125943844]
+collision_layer = 2
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="NodeLevel/Level/StaticBody3D" unique_id=668640894]
 shape = SubResource("BoxShape3D_7mycd")
