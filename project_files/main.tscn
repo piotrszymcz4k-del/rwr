@@ -7,6 +7,9 @@
 [ext_resource type="PackedScene" uid="uid://ircv4avuj0lo" path="res://assets/models/hand_r.gltf" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://c2sbwtn1wqm5k" path="res://assets/models/tree_palm.glb" id="6_7mycd"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
+albedo_color = Color(0.7876728, 0.0005053729, 0.79218704, 1)
+
 [sub_resource type="CylinderMesh" id="CylinderMesh_lquwl"]
 top_radius = 0.2
 bottom_radius = 0.2
@@ -54,6 +57,7 @@ collision_mask = 2
 hit_from_inside = true
 
 [node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1663397397]
+material_override = SubResource("StandardMaterial3D_272bh")
 mesh = SubResource("CylinderMesh_lquwl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1843379335]
