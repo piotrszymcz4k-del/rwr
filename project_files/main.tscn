@@ -5,21 +5,22 @@
 [ext_resource type="Script" uid="uid://d3nohurygrnpy" path="res://xr_origin_3d.gd" id="2_lquwl"]
 [ext_resource type="Script" uid="uid://b3h8cmnrih661" path="res://right_controller.gd" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://ircv4avuj0lo" path="res://assets/models/hand_r.gltf" id="4_7mycd"]
+[ext_resource type="Texture2D" uid="uid://hvd5pgbaosgw" path="res://assets/models/sand1.JPG" id="6_4c57u"]
 [ext_resource type="PackedScene" uid="uid://c2sbwtn1wqm5k" path="res://assets/models/tree_palm.glb" id="6_7mycd"]
 [ext_resource type="PackedScene" uid="uid://ck0tti2ls7s0t" path="res://assets/models/tree_palmBend.glb" id="7_kek77"]
 [ext_resource type="PackedScene" uid="uid://b6khvuvoylqe5" path="res://assets/models/tree_palmDetailedShort.glb" id="8_4c57u"]
 [ext_resource type="PackedScene" uid="uid://cxfg12deqteum" path="res://assets/models/tree_palmDetailedTall.glb" id="9_efxa6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
-albedo_color = Color(0.63106656, 0, 2.4383342, 1)
+albedo_color = Color(0, 2.535265, 2.535265, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lquwl"]
 top_radius = 0.3
 bottom_radius = 0.2
 height = 0.05
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7mycd"]
-albedo_color = Color(1, 1, 0, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efxa6"]
+albedo_texture = ExtResource("6_4c57u")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_lquwl"]
 size = Vector2(20, 20)
@@ -72,7 +73,7 @@ collision_mask = 2
 hit_from_inside = true
 
 [node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1663397397]
-transform = Transform3D(1, 0, 0, 0, 0.9920248, -0.12604316, 0, 0.12604316, 0.9920248, -0.006401006, -1.9829412, -4.9681234)
+transform = Transform3D(1, 0, 0, 0, 0.9920248, -0.12604316, 0, 0.12604316, 0.9920248, -0.0021862984, -1.9462848, -4.9526954)
 material_override = SubResource("StandardMaterial3D_272bh")
 mesh = SubResource("CylinderMesh_lquwl")
 
@@ -87,7 +88,7 @@ text = "Enter VR"
 
 [node name="Level" type="MeshInstance3D" parent="NodeLevel" unique_id=44387286]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.072172746, 0, 0)
-material_override = SubResource("StandardMaterial3D_7mycd")
+material_override = SubResource("StandardMaterial3D_efxa6")
 mesh = SubResource("PlaneMesh_lquwl")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="NodeLevel/Level" unique_id=125943844]
@@ -126,7 +127,11 @@ shape = SubResource("ConcavePolygonShape3D_272bh")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=909231601]
 transform = Transform3D(-0.6777193, -0.7349236, 0.024163954, 0.17331058, -0.12771219, 0.97655153, -0.71460485, 0.6660159, 0.21392307, 0, 3.3504996, 0)
+layers = 3
+light_color = Color(0.8980392, 0.69411767, 0.30980393, 1)
 light_indirect_energy = 1.005
+light_angular_distance = 34.34
+light_specular = 2.579
 
 [node name="tree_palmBend2" parent="." unique_id=1657182934 instance=ExtResource("7_kek77")]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -3.0934305, -2.067574, -8.044664)
