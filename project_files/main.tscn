@@ -14,6 +14,7 @@
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_4c57u"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
+transparency = 1
 albedo_color = Color(0, 3.3848207, 3.3848207, 1)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_lquwl"]
@@ -82,6 +83,7 @@ hit_from_inside = true
 [node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1663397397]
 transform = Transform3D(1, 0, 0, 0, 0.9920248, -0.12604316, 0, 0.12604316, 0.9920248, 2.3722649e-05, -1.9784281, -5.0499687)
 material_override = SubResource("StandardMaterial3D_272bh")
+transparency = 0.2
 mesh = SubResource("CylinderMesh_lquwl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1843379335]
