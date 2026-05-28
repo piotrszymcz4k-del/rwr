@@ -7,19 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://ircv4avuj0lo" path="res://assets/models/hand_r.gltf" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://c2sbwtn1wqm5k" path="res://assets/models/tree_palm.glb" id="6_7mycd"]
 
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_7mycd"]
-sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
-
-[sub_resource type="Sky" id="Sky_272bh"]
-sky_material = SubResource("ProceduralSkyMaterial_7mycd")
-
-[sub_resource type="Environment" id="Environment_5vw27"]
-background_mode = 2
-sky = SubResource("Sky_272bh")
-tonemap_mode = 2
-glow_enabled = true
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
 albedo_color = Color(0.7876728, 0.0005053729, 0.79218704, 1)
 
@@ -43,13 +30,6 @@ data = PackedVector3Array(-0.053799998, 0.060399998, -0.053799998, -0.031, 0, -0
 
 [node name="Node3D" type="Node3D" unique_id=861789591]
 script = ExtResource("1_2h1pa")
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=387338952]
-transform = Transform3D(-0.8660254, -0.43301278, 0.25, 0, 0.49999997, 0.86602545, -0.50000006, 0.75, -0.43301266, 0, 4.217374, 0)
-shadow_enabled = true
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=440690064]
-environment = SubResource("Environment_5vw27")
 
 [node name="XROrigin3D" type="XROrigin3D" parent="." unique_id=114804357]
 script = ExtResource("2_lquwl")
@@ -128,6 +108,10 @@ transform = Transform3D(2.6474895, 0, -1.4109567, 0, 3, 0, 1.4109567, 0, 2.64748
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree_palm4" unique_id=1576103182]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 shape = SubResource("ConcavePolygonShape3D_272bh")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=909231601]
+transform = Transform3D(-0.6777193, -0.7349236, 0.024163954, 0.17331058, -0.12771219, 0.97655153, -0.71460485, 0.6660159, 0.21392307, 0, 3.3504996, 0)
+light_indirect_energy = 1.005
 
 [editable path="tree_palm2"]
 [editable path="tree_palm5"]
