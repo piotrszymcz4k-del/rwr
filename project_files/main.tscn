@@ -52,12 +52,12 @@ script = ExtResource("3_lquwl")
 [node name="hand_r" parent="XROrigin3D/RightController/RightHandRoot" unique_id=602055184 instance=ExtResource("4_7mycd")]
 
 [node name="TeleportRay" type="RayCast3D" parent="XROrigin3D/RightController" unique_id=1606368127]
-target_position = Vector3(0, -1, -10)
+target_position = Vector3(0, -4, -10)
 collision_mask = 2
 hit_from_inside = true
 
 [node name="TeleportMarker" type="MeshInstance3D" parent="XROrigin3D/RightController" unique_id=1663397397]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.4077042, -0.58134353, -2.068937)
+transform = Transform3D(1, 0, 0, 0, 0.9920248, -0.12604316, 0, 0.12604316, 0.9920248, -0.05147022, -0.9208057, -2.7340758)
 material_override = SubResource("StandardMaterial3D_272bh")
 mesh = SubResource("CylinderMesh_lquwl")
 
