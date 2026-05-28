@@ -6,6 +6,7 @@
 [ext_resource type="Script" uid="uid://b3h8cmnrih661" path="res://right_controller.gd" id="3_lquwl"]
 [ext_resource type="PackedScene" uid="uid://ircv4avuj0lo" path="res://assets/models/hand_r.gltf" id="4_7mycd"]
 [ext_resource type="PackedScene" uid="uid://c2sbwtn1wqm5k" path="res://assets/models/tree_palm.glb" id="6_7mycd"]
+[ext_resource type="PackedScene" uid="uid://dtah8kbv4lmaj" path="res://assets/models/penis.glb" id="7_272bh"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_272bh"]
 albedo_color = Color(0.7876728, 0.0005053729, 0.79218704, 1)
@@ -112,6 +113,9 @@ shape = SubResource("ConcavePolygonShape3D_272bh")
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=909231601]
 transform = Transform3D(-0.6777193, -0.7349236, 0.024163954, 0.17331058, -0.12771219, 0.97655153, -0.71460485, 0.6660159, 0.21392307, 0, 3.3504996, 0)
 light_indirect_energy = 1.005
+
+[node name="Sketchfab_Scene" parent="." unique_id=1745429087 instance=ExtResource("7_272bh")]
+transform = Transform3D(0.15782216, -0.6482827, 3.9439602, -3.9051602, -0.86575323, 0.013962606, 0.85136116, -3.851, -0.66707075, -0.5915446, -1.3640802, -2.5480497)
 
 [editable path="tree_palm2"]
 [editable path="tree_palm5"]
