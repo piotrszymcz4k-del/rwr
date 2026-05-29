@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://d1i3srur13trm"
-path="res://.godot/imported/tree_fat_darkh.glb-97ec3063706b0fc2fe1eb23c14b7ccac.scn"
+uid="uid://crsyoa48p0s34"
+path="res://.godot/imported/animal-crab.glb-e0c199a5f560b04bc45a4e8460b9dd5f.scn"
 
 [deps]
 
-source_file="res://assets/models/tree_fat_darkh.glb"
-dest_files=["res://.godot/imported/tree_fat_darkh.glb-97ec3063706b0fc2fe1eb23c14b7ccac.scn"]
+source_file="res://assets/models/animal-crab.glb"
+dest_files=["res://.godot/imported/animal-crab.glb-e0c199a5f560b04bc45a4e8460b9dd5f.scn"]
 
 [params]
 

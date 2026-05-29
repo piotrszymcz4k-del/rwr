@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ircv4avuj0lo" path="res://assets/models/hand_r.gltf" id="4_7mycd"]
 [ext_resource type="Texture2D" uid="uid://hvd5pgbaosgw" path="res://assets/models/sand1.JPG" id="6_4c57u"]
 [ext_resource type="PackedScene" uid="uid://c2sbwtn1wqm5k" path="res://assets/models/tree_palm.glb" id="6_7mycd"]
+[ext_resource type="Texture2D" uid="uid://dsdh0k8iu4i6v" path="res://assets/models/2204_w017_n001_443a_p30_443.jpg" id="6_dg77c"]
 [ext_resource type="PackedScene" uid="uid://ck0tti2ls7s0t" path="res://assets/models/tree_palmBend.glb" id="7_kek77"]
 [ext_resource type="PackedScene" uid="uid://b6khvuvoylqe5" path="res://assets/models/tree_palmDetailedShort.glb" id="8_4c57u"]
 [ext_resource type="PackedScene" uid="uid://cxfg12deqteum" path="res://assets/models/tree_palmDetailedTall.glb" id="9_efxa6"]
@@ -23,6 +24,8 @@ bottom_radius = 0.2
 height = 0.05
 
 [sub_resource type="SystemFont" id="SystemFont_efxa6"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efxa6"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_efxa6"]
 albedo_texture = ExtResource("6_4c57u")
@@ -88,6 +91,14 @@ mesh = SubResource("CylinderMesh_lquwl")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1843379335]
 
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=684559898]
+offset_left = 6.0
+offset_top = -22.0
+offset_right = 1152.0
+offset_bottom = 642.0
+texture = ExtResource("6_dg77c")
+expand_mode = 1
+
 [node name="Button" type="Button" parent="CanvasLayer" unique_id=1954376599]
 anchors_preset = 8
 anchor_left = 0.5
@@ -102,9 +113,10 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0.7411765, 0, 1)
 theme_override_fonts/font = SubResource("SystemFont_efxa6")
 theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxFlat_efxa6")
 text = "Enter VR"
 
 [node name="NodeLevel" type="Node3D" parent="." unique_id=1491510390]
@@ -164,21 +176,21 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 shape = SubResource("ConcavePolygonShape3D_dg77c")
 
 [node name="tree_palmDetailedShort2" parent="." unique_id=1054559469 instance=ExtResource("8_4c57u")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 3.6078176, -1.6052022, 6.635293)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 3.6078176, -1.6052022, 6.635293)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree_palmDetailedShort2" unique_id=1794835282]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 shape = SubResource("ConcavePolygonShape3D_ycdy4")
 
 [node name="tree_palmDetailedTall2" parent="." unique_id=1045852413 instance=ExtResource("9_efxa6")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 6.3074193, -1.9896595, -6.044231)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 6.3074193, -1.9896595, -6.044231)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree_palmDetailedTall2" unique_id=51325163]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
 shape = SubResource("ConcavePolygonShape3D_w48qg")
 
 [node name="tree_palmDetailedShort3" parent="." unique_id=83941625 instance=ExtResource("8_4c57u")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 2.588975, -1.9077563, 1.0611804)
+transform = Transform3D(6, 0, 0, 0, 6, 0, 0, 0, 6, 2.3070886, -1.9077563, -0.36154342)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="tree_palmDetailedShort3" unique_id=2034027057]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.05, 0)
